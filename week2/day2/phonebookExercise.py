@@ -31,7 +31,8 @@ def deleteNumber():
 def listAllEntries ():
     if len(phoneBook) > 0:
         for entry in phoneBook:
-            print(f"Found entry for {entry['name'].capitalize()} : {entry['phoneNumber']}")
+            print(f"{entry['name'].capitalize()} : {entry['phoneNumber']}")
+
     else:
         print ("No entries in phone book yet")
         

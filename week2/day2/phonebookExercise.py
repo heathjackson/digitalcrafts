@@ -19,21 +19,21 @@ def addEntry():
 
 def deleteNumber():
     if len(phoneBook) > 0:
-        nameToDelete = input ("Which user would you like to delete? ")
-        for entry in phoneBook:
-            if entry["name"] == nameToDelete:
-                phoneBook.remove(entry)
-                print("Deleted entry for", entry["name"])
-            else:
-                print("That name is not in the phone book!")
-                return
+      nameToDelete = input ("Which user would you like to delete? ")
+      personInPhonebook = [entry for entry in phoneBook if entry["name"]] == nameToDelete
+      for entry in phoneBook:
+          if entry["name"] == nameToDelete:
+            phoneBook.remove(entry)
+            print("Deleted entry for", nameToDelete.capitalize)
+          else:
+            print("That name is not in the phone book!")
+            return
     else:
         print ("No entries in phone book")
 
 def listAllEntries ():
     if len(phoneBook) > 0:
         for entry in phoneBook:
-          entry = entry['name']
           print ("Found entry for ", entry["name"],":", entry["phoneNumber"])
     else:
         print ("No entries in phone book yet")

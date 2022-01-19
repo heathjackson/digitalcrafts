@@ -2,19 +2,23 @@
 
 
 class User:
-  def __init__(self, firstName, lastName):
+  def __init__(self, firstName, lastName, address=[]):
     self.firstName = firstName
     self.lastName = lastName
+    self.address = address
+
+  def addAddress(self, address):
+    self.address.append(address)
   
-  def add_address(self, addresses):
-    address = []
-    address.append(addresses)
-    # print(address)
+  def display_address(self):
+    for add in self.address:
+      print(add.street, add.city, add.state, add.zip_code)
+  
 
 
-    
 
-class address:
+class Address:
+
   def __init__(self, street, city, state, zip_code):
 
     self.street = street
@@ -22,10 +26,15 @@ class address:
     self.state= state
     self.zip_code= zip_code
 
-Heather = User("Heather", "Jackson")
-Heather.add_address("4230 Old Oak Trace")
+  
 
 
+heathersHome = Address("4230 Old Oak Trace", "Atlanta", "GA", "30041")
+heather = User("Heather", "Jackson")
+# print(heather.Address.city)
+heather.addAddress(heathersHome)
+print(heather.address)
+print(var(heather))
 
 
 

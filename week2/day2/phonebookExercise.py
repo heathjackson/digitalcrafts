@@ -1,12 +1,12 @@
-phoneBook = []
-def lookUpNumber():
+phoneBook = [{"name": "heather", "phoneNumber": "801-201-8625"}, {"name": "Jo", "phoneNumber": "555-555-5555"}]
+def lookUpName():
     if len(phoneBook) > 0:
-        nameSearch= input("Name: ")  
-        for entry in phoneBook:
-                if entry["name"] == nameSearch:
-                    print("Found entry for ", nameSearch.capitalize(),":", entry["phoneNumber"])
-                else:
-                    print("That name is not in the phone book!")
+        nameSearch= input("Name: ").lower()  
+        newNameList = [entry for entry in phoneBook if entry["name"] == nameSearch]
+        if len(newNameList) > 0:
+            print(f"Found entry for {nameSearch.capitalize()} : {newNameList[0]['phoneNumber']}")
+        else:
+            print("That name is not in the phone book!")
     else:
         print ("No entries in phone book yet")
     
@@ -19,22 +19,19 @@ def addEntry():
 
 def deleteNumber():
     if len(phoneBook) > 0:
-      nameToDelete = input ("Which user would you like to delete? ")
-      personInPhonebook = [entry for entry in phoneBook if entry["name"]] == nameToDelete
-      for entry in phoneBook:
-          if entry["name"] == nameToDelete:
-            phoneBook.remove(entry)
-            print("Deleted entry for", nameToDelete.capitalize)
-          else:
-            print("That name is not in the phone book!")
-            return
-    else:
-        print ("No entries in phone book")
+        nameToDelete = input ("Which user would you like to delete? ")
+        checkInPhonebook = [entry for entry in phoneBook if entry["name"] == nameToDelete]
+        if len(checkInPhonebook) > 0:
+            phoneBook.remove(checkInPhonebook[0])
+            print(phoneBook)
+        else:
+            print ("No entries in phone book")
+
 
 def listAllEntries ():
     if len(phoneBook) > 0:
         for entry in phoneBook:
-          print ("Found entry for ", entry["name"],":", entry["phoneNumber"])
+            print(f"Found entry for {entry['name'].capitalize()} : {entry['phoneNumber']}")
     else:
         print ("No entries in phone book yet")
         
@@ -50,7 +47,7 @@ Electronic Phone Book
 =====================
 What do you want to do (1-5)?"""))
     if userInput == 1:
-        lookUpNumber()
+        lookUpName()
     elif userInput == 2:
         addEntry()
     elif userInput == 3:

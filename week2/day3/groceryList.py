@@ -1,25 +1,61 @@
 listOfGroceries = []
 
+
 while True:
-  groceryStoreName = input("What is the name of the grocery store you want to add? ")
-  groceryStoreAddress = input(f"What is the address of the {groceryStoreName} you want to add? ")
-  userContinue = input("Would you like to continue? Press enter to continue. If no, press N")
-  itemNeeded = input("")
+  groceryList = input("What would you like your name to be ")
+  address = input("Where will you be shopping?")
+  foodTitle = input("What would you like to add?")
+  foodPrice = input("How much does it cost")
+  foodQuantity = input("How many do you want to buy?")
+  userContinue = input("Would you like to continue?")
+  if userContinue == "n":
+      break
 
 
 class Grocery_list:
-  def __init__(self, title, address):
 
-    self.title = title
+  def __init__(self, groceryList, address):
+    self.groceryList = groceryList
     self.address = address
-  
-class Grocery_Items:
-  def __init__(self, title, price, quantity):
-    # listOfGroceryStores.append(Grocery_lists(groceryStoreName, groceryStoreAddress))
 
-    self.title = title
-    self.price = price
-    self.quantity = quantity
+  def groceries(self):
+    totalInGroceries = [{foodTitle: [foodPrice, foodQuantity]}]
+    listOfGroceries.append(totalInGroceries)
+
+  def __str__(self):
+    print(listOfGroceries)
+  
+  # def display_groceries(self):
+  #   for grocery in listOfGroceries:
+  #     print(grocery[0])
+
+
+print(Grocery_list.__str__)
+
+ 
+
+
+
+  
+
+# something = Grocery_list(groceryList, 3424324234)
+
+# print(str(something.groceryList) + " | " + str(something.address))
+
+# class Grocery_Items:
+#   def __init__(self, title, price, quantity):
+#     self.title = title
+#     self.price = price
+#     self.quantity = quantity
+
+#   def 
+
+  
+
+
+
+  
+
 
 
 

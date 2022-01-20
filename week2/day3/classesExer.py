@@ -5,7 +5,7 @@ class User:
   def __init__(self, firstName, lastName, address=[]):
     self.firstName = firstName
     self.lastName = lastName
-    self.address = address
+    self.Address = address
 
   def addAddress(self, address):
     self.address.append(address)
@@ -17,7 +17,7 @@ class User:
 
 
 
-class Address:
+class Address():
 
   def __init__(self, street, city, state, zip_code):
 
